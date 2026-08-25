@@ -32,3 +32,13 @@ from typing import List
 class Solution:
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
         pass
+
+
+if __name__ == "__main__":
+    # Run this file to check your answer against this problem's tests.
+    import pathlib
+    import sys
+
+    import pytest
+
+    sys.exit(pytest.main(["-v", str(pathlib.Path(__file__).with_name("test_group_anagrams.py"))]))

@@ -32,3 +32,13 @@ from common.structures import ListNode
 class Solution:
     def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
         pass
+
+
+if __name__ == "__main__":
+    # Run this file to check your answer against this problem's tests.
+    import pathlib
+    import sys
+
+    import pytest
+
+    sys.exit(pytest.main(["-v", str(pathlib.Path(__file__).with_name("test_reverse_linked_list.py"))]))

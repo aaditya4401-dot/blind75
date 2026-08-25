@@ -8,6 +8,17 @@ You write the solution. The tests tell you whether it's right.
 
 ## Running
 
+**Run the problem file itself** — it executes that problem's tests:
+
+```bash
+.venv/bin/python blind75/01_arrays/two_sum.py
+```
+
+In VS Code, point the interpreter at `.venv` (Cmd+Shift+P → "Python: Select
+Interpreter") and the ▶ Run button on any problem file does the same thing.
+
+Or drive pytest directly:
+
 ```bash
 cd blind75
 ../.venv/bin/pytest 01_arrays/test_two_sum.py    # one problem
@@ -15,7 +26,7 @@ cd blind75
 ../.venv/bin/pytest                              # everything
 ```
 
-Activate the venv (`source ../.venv/bin/activate`) and it's just `pytest`.
+Activate the venv (`source .venv/bin/activate`) and it's just `python` / `pytest`.
 
 Every test fails right now — the stubs are empty. That's the starting line.
 

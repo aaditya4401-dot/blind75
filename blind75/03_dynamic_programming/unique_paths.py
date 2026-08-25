@@ -30,3 +30,13 @@ Target complexity: O(m * n) time, O(n) space (or O(1) with combinatorics)
 class Solution:
     def uniquePaths(self, m: int, n: int) -> int:
         pass
+
+
+if __name__ == "__main__":
+    # Run this file to check your answer against this problem's tests.
+    import pathlib
+    import sys
+
+    import pytest
+
+    sys.exit(pytest.main(["-v", str(pathlib.Path(__file__).with_name("test_unique_paths.py"))]))

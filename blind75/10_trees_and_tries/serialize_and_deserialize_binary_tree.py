@@ -47,3 +47,13 @@ class Codec:
     def deserialize(self, data: str) -> Optional[TreeNode]:
         """Decode your encoded string back to a tree."""
         pass
+
+
+if __name__ == "__main__":
+    # Run this file to check your answer against this problem's tests.
+    import pathlib
+    import sys
+
+    import pytest
+
+    sys.exit(pytest.main(["-v", str(pathlib.Path(__file__).with_name("test_serialize_and_deserialize_binary_tree.py"))]))

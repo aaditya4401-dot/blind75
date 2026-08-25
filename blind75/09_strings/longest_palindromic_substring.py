@@ -30,3 +30,13 @@ Target complexity: O(n^2) time, O(1) space
 class Solution:
     def longestPalindrome(self, s: str) -> str:
         pass
+
+
+if __name__ == "__main__":
+    # Run this file to check your answer against this problem's tests.
+    import pathlib
+    import sys
+
+    import pytest
+
+    sys.exit(pytest.main(["-v", str(pathlib.Path(__file__).with_name("test_longest_palindromic_substring.py"))]))

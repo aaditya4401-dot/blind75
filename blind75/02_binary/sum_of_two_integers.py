@@ -29,3 +29,13 @@ Target complexity: O(1) time (fixed 32-bit width), O(1) space
 class Solution:
     def getSum(self, a: int, b: int) -> int:
         pass
+
+
+if __name__ == "__main__":
+    # Run this file to check your answer against this problem's tests.
+    import pathlib
+    import sys
+
+    import pytest
+
+    sys.exit(pytest.main(["-v", str(pathlib.Path(__file__).with_name("test_sum_of_two_integers.py"))]))

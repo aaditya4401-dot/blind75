@@ -30,3 +30,13 @@ from typing import List
 class Solution:
     def countBits(self, n: int) -> List[int]:
         pass
+
+
+if __name__ == "__main__":
+    # Run this file to check your answer against this problem's tests.
+    import pathlib
+    import sys
+
+    import pytest
+
+    sys.exit(pytest.main(["-v", str(pathlib.Path(__file__).with_name("test_counting_bits.py"))]))

@@ -38,3 +38,13 @@ from common.structures import TreeNode
 class Solution:
     def kthSmallest(self, root: Optional[TreeNode], k: int) -> int:
         pass
+
+
+if __name__ == "__main__":
+    # Run this file to check your answer against this problem's tests.
+    import pathlib
+    import sys
+
+    import pytest
+
+    sys.exit(pytest.main(["-v", str(pathlib.Path(__file__).with_name("test_kth_smallest_element_in_a_bst.py"))]))
