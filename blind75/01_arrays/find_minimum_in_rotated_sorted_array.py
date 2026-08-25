@@ -32,15 +32,14 @@ class Solution:
     def findMin(self, nums: List[int]) -> int:
         l , r = 0 , len(nums)-1
 
-        while l<=r:
+        while l<r:
             mid = (l+r)//2
             if nums[mid]>nums[r]:
                 l = mid+1
             else:
-                r = mid-1
+                r = mid
         return nums[l]
 
-        pass
 
 
 if __name__ == "__main__":
@@ -50,4 +49,6 @@ if __name__ == "__main__":
 
     import pytest
 
-    sys.exit(pytest.main(["-v", str(pathlib.Path(__file__).with_name("test_find_minimum_in_rotated_sorted_array.py"))]))
+    _f = pathlib.Path(__file__).resolve()
+    _test = _f.parents[1] / "tests" / _f.parent.name / ("test_" + _f.name)
+    sys.exit(pytest.main(["-v", str(_test)]))

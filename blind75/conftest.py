@@ -1,11 +1,16 @@
-"""Makes `from common.structures import ...` work from any test file.
+"""Import paths for the test suite.
 
-pytest already puts each test's own directory on sys.path (so a test can do
-`from two_sum import Solution`); this adds the blind75 root so the shared
-helpers resolve too.
+Tests live in tests/<category>/ while the problems they import live in
+<category>/, so each problem folder goes on sys.path along with the blind75
+root (which is what makes `from common.structures import ...` work).
 """
 
-import os
+import pathlib
 import sys
 
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+ROOT = pathlib.Path(__file__).parent.resolve()
+
+sys.path.insert(0, str(ROOT))
+for _category in sorted(ROOT.glob("[0-9][0-9]_*")):
+    if _category.is_dir():
+        sys.path.insert(0, str(_category))

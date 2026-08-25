@@ -21,9 +21,9 @@ Or drive pytest directly:
 
 ```bash
 cd blind75
-../.venv/bin/pytest 01_arrays/test_two_sum.py    # one problem
-../.venv/bin/pytest 01_arrays                    # one category
-../.venv/bin/pytest                              # everything
+../.venv/bin/pytest tests/01_arrays/test_two_sum.py   # one problem
+../.venv/bin/pytest tests/01_arrays                   # one category
+../.venv/bin/pytest                                   # everything
 ```
 
 Activate the venv (`source .venv/bin/activate`) and it's just `python` / `pytest`.
@@ -35,12 +35,17 @@ Every test fails right now — the stubs are empty. That's the starting line.
 ```
 blind75/
   01_arrays/
-    two_sum.py           <- you write this
-    test_two_sum.py      <- already written, don't edit
+    two_sum.py                    <- you write this
   ...
-  common/structures.py   <- ListNode, TreeNode, GraphNode + build/serialize helpers
-  conftest.py            <- puts common/ on the import path
+  tests/
+    01_arrays/
+      test_two_sum.py             <- already written, don't edit
+  common/structures.py            <- ListNode, TreeNode, GraphNode + helpers
+  conftest.py                     <- wires up the import paths
 ```
+
+Problem folders hold only problems; every test lives under `tests/`, mirroring
+the same category names.
 
 Method names match LeetCode exactly (`twoSum`, not `two_sum`), so a finished
 solution can be pasted straight into the LeetCode editor.

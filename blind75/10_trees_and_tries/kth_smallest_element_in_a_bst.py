@@ -47,4 +47,6 @@ if __name__ == "__main__":
 
     import pytest
 
-    sys.exit(pytest.main(["-v", str(pathlib.Path(__file__).with_name("test_kth_smallest_element_in_a_bst.py"))]))
+    _f = pathlib.Path(__file__).resolve()
+    _test = _f.parents[1] / "tests" / _f.parent.name / ("test_" + _f.name)
+    sys.exit(pytest.main(["-v", str(_test)]))
