@@ -1,0 +1,30 @@
+"""
+Valid Anagram  |  LeetCode 242  |  Easy
+https://leetcode.com/problems/valid-anagram/
+
+Return True if `t` is an anagram of `s` -- the same characters with the same
+counts, in any order.
+
+Example 1:
+    Input:  s = "anagram", t = "nagaram"
+    Output: True
+
+Example 2:
+    Input:  s = "rat", t = "car"
+    Output: False
+
+Constraints:
+    1 <= len(s), len(t) <= 5 * 10^4
+    Both consist of lowercase English letters.
+
+Hint:
+    Compare character counts (Counter(s) == Counter(t)), after the O(1)
+    early-out of len(s) != len(t). Sorting both is O(n log n) and also fine.
+    Follow-up worth thinking about: what changes for Unicode input?
+
+Target complexity: O(n) time, O(alphabet) space
+"""
+
+class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
+        pass
