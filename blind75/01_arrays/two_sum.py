@@ -33,7 +33,15 @@ from typing import List
 
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
-        pass
+        seen = {}
+
+        for index , num in enumerate(nums):
+            comp = target - num
+            if comp in seen:
+                return [seen[comp],index]
+            seen[num]=index
+
+        return []
 
 
 if __name__ == "__main__":
