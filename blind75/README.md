@@ -67,7 +67,7 @@ Tick these off as the tests go green.
 
 ### 01 — Arrays (10)
 
-- [ ] [Two Sum](01_arrays/two_sum.py) — Easy — hash map
+- [x] [Two Sum](01_arrays/two_sum.py) — Easy — hash map
 - [ ] [Best Time to Buy and Sell Stock](01_arrays/best_time_to_buy_and_sell_stock.py) — Easy — one pass
 - [ ] [Contains Duplicate](01_arrays/contains_duplicate.py) — Easy — set
 - [ ] [Product of Array Except Self](01_arrays/product_of_array_except_self.py) — Medium — prefix/suffix
