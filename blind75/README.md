@@ -68,13 +68,13 @@ Tick these off as the tests go green.
 ### 01 — Arrays (10)
 
 - [x] [Two Sum](01_arrays/two_sum.py) — Easy — hash map
-- [ ] [Best Time to Buy and Sell Stock](01_arrays/best_time_to_buy_and_sell_stock.py) — Easy — one pass
-- [ ] [Contains Duplicate](01_arrays/contains_duplicate.py) — Easy — set
-- [ ] [Product of Array Except Self](01_arrays/product_of_array_except_self.py) — Medium — prefix/suffix
-- [ ] [Maximum Subarray](01_arrays/maximum_subarray.py) — Medium — Kadane
-- [ ] [Maximum Product Subarray](01_arrays/maximum_product_subarray.py) — Medium — Kadane, min+max
+- [x] [Best Time to Buy and Sell Stock](01_arrays/best_time_to_buy_and_sell_stock.py) — Easy — one pass
+- [x] [Contains Duplicate](01_arrays/contains_duplicate.py) — Easy — set
+- [x] [Product of Array Except Self](01_arrays/product_of_array_except_self.py) — Medium — prefix/suffix
+- [x] [Maximum Subarray](01_arrays/maximum_subarray.py) — Medium — Kadane
+- [x] [Maximum Product Subarray](01_arrays/maximum_product_subarray.py) — Medium — Kadane, min+max
 - [x] [Find Minimum in Rotated Sorted Array](01_arrays/find_minimum_in_rotated_sorted_array.py) — Medium — binary search
-- [ ] [Search in Rotated Sorted Array](01_arrays/search_in_rotated_sorted_array.py) — Medium — binary search
+- [x] [Search in Rotated Sorted Array](01_arrays/search_in_rotated_sorted_array.py) — Medium — binary search
 - [ ] [3Sum](01_arrays/three_sum.py) — Medium — sort + two pointers
 - [ ] [Container With Most Water](01_arrays/container_with_most_water.py) — Medium — two pointers
 

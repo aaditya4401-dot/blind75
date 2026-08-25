@@ -30,7 +30,22 @@ from typing import List
 
 class Solution:
     def maxProduct(self, nums: List[int]) -> int:
-        pass
+        n = len(nums)
+
+        currMax , currMin, maxi = nums[0],nums[0],nums[0]
+
+        for i in range(1,n):
+            oldMax = currMax
+
+            oldMin = currMin
+
+            currMax = max(nums[i],oldMax*nums[i],oldMin*nums[i])
+            currMin = min(nums[i], oldMax*nums[i], oldMin*nums[i])
+
+            maxi = max(maxi, currMax)
+
+        return maxi
+
 
 
 if __name__ == "__main__":
