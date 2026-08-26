@@ -75,8 +75,8 @@ Tick these off as the tests go green.
 - [x] [Maximum Product Subarray](01_arrays/maximum_product_subarray.py) — Medium — Kadane, min+max
 - [x] [Find Minimum in Rotated Sorted Array](01_arrays/find_minimum_in_rotated_sorted_array.py) — Medium — binary search
 - [x] [Search in Rotated Sorted Array](01_arrays/search_in_rotated_sorted_array.py) — Medium — binary search
-- [ ] [3Sum](01_arrays/three_sum.py) — Medium — sort + two pointers
-- [ ] [Container With Most Water](01_arrays/container_with_most_water.py) — Medium — two pointers
+- [x] [3Sum](01_arrays/three_sum.py) — Medium — sort + two pointers
+- [x] [Container With Most Water](01_arrays/container_with_most_water.py) — Medium — two pointers
 
 ### 02 — Binary (5)
 
