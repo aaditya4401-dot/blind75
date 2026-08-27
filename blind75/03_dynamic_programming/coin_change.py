@@ -33,7 +33,36 @@ from typing import List
 
 class Solution:
     def coinChange(self, coins: List[int], amount: int) -> int:
-        pass
+        n = len(coins)
+
+        dp = [[-1]*(amount+1) for _ in range(n+1)]
+
+        ans = self.helper(n-1,amount,coins,dp)
+
+        if ans==float("inf"):
+            return -1
+        return ans
+
+
+    def helper(self,ind,target,coins,dp):
+        if target==0:
+            return 0
+        if ind==0:
+            if target%coins[0]==0:
+                return target//coins[0]
+            else:
+                return float("inf")
+        if dp[ind][target]!=-1:
+            return dp[ind][target]
+        pick = float("inf")
+        if target>=coins[ind]:
+            pick = 1+self.helper(ind,target-coins[ind],coins,dp)
+        notpick = self.helper(ind-1, target, coins , dp)
+
+        dp[ind][target]= min(pick, notpick)
+
+        return dp[ind][target]
+
 
 
 if __name__ == "__main__":

@@ -88,14 +88,14 @@ Tick these off as the tests go green.
 
 ### 03 — Dynamic Programming (11)
 
-- [ ] [Climbing Stairs](03_dynamic_programming/climbing_stairs.py) — Easy — Fibonacci
-- [ ] [Coin Change](03_dynamic_programming/coin_change.py) — Medium — unbounded knapsack
-- [ ] [Longest Increasing Subsequence](03_dynamic_programming/longest_increasing_subsequence.py) — Medium — patience sorting
-- [ ] [Longest Common Subsequence](03_dynamic_programming/longest_common_subsequence.py) — Medium — 2D grid DP
-- [ ] [Word Break](03_dynamic_programming/word_break.py) — Medium — DP over prefixes
-- [ ] [Combination Sum IV](03_dynamic_programming/combination_sum_iv.py) — Medium — loop order matters
-- [ ] [House Robber](03_dynamic_programming/house_robber.py) — Medium — take/skip
-- [ ] [House Robber II](03_dynamic_programming/house_robber_ii.py) — Medium — run it twice
+- [x] [Climbing Stairs](03_dynamic_programming/climbing_stairs.py) — Easy — Fibonacci
+- [x] [Coin Change](03_dynamic_programming/coin_change.py) — Medium — unbounded knapsack
+- [x] [Longest Increasing Subsequence](03_dynamic_programming/longest_increasing_subsequence.py) — Medium — patience sorting
+- [x] [Longest Common Subsequence](03_dynamic_programming/longest_common_subsequence.py) — Medium — 2D grid DP
+- [x] [Word Break](03_dynamic_programming/word_break.py) — Medium — DP over prefixes
+- [x] [Combination Sum IV](03_dynamic_programming/combination_sum_iv.py) — Medium — loop order matters
+- [x] [House Robber](03_dynamic_programming/house_robber.py) — Medium — take/skip
+- [x] [House Robber II](03_dynamic_programming/house_robber_ii.py) — Medium — run it twice
 - [ ] [Decode Ways](03_dynamic_programming/decode_ways.py) — Medium — Fibonacci with gates
 - [ ] [Unique Paths](03_dynamic_programming/unique_paths.py) — Medium — grid DP
 - [ ] [Jump Game](03_dynamic_programming/jump_game.py) — Medium — greedy reach

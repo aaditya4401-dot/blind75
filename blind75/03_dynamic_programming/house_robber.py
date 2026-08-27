@@ -30,6 +30,23 @@ from typing import List
 
 class Solution:
     def rob(self, nums: List[int]) -> int:
+        dp = [-1]*(len(nums))
+
+        return self.helper(len(nums)-1,nums,dp)
+
+    def helper(self, ind, nums, dp):
+        if ind==0:
+            return nums[ind]
+        if dp[ind]!=-1:
+            return dp[ind]
+        rob , notrob= 0,0
+        if ind>=2:
+            rob = nums[ind] + self.helper(ind-2,nums,dp)
+        if ind>=1:
+            notrob = self.helper(ind-1,nums, dp)
+
+        dp[ind] = max(rob,notrob)
+        return dp[ind]
         pass
 
 

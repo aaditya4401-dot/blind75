@@ -35,7 +35,22 @@ from typing import List
 
 class Solution:
     def combinationSum4(self, nums: List[int], target: int) -> int:
-        pass
+        dp = [-1]*(target+1)
+
+        return self.helper(target, nums,dp)
+
+    def helper(self, remaining , nums,dp):
+        if remaining ==0:
+            return 1
+        if dp[remaining]!=-1:
+            return dp[remaining]
+        dp[remaining]=0
+
+        for num in nums:
+            if remaining >=num:
+                dp[remaining] += self.helper(remaining-num,nums,dp)
+
+        return dp[remaining]
 
 
 if __name__ == "__main__":

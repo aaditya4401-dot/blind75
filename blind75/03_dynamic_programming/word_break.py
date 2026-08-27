@@ -32,6 +32,24 @@ from typing import List
 
 class Solution:
     def wordBreak(self, s: str, wordDict: List[str]) -> bool:
+        words = set(wordDict)
+        dp = [-1]*(len(s)+1)
+        return self.helper(len(s),s,words,dp)
+
+    def helper(self, ind, s,words,dp):
+        if ind==0:
+            return True
+        if dp[ind] !=-1:
+            return dp[ind]
+
+        dp[ind]=False
+
+        for j in range(ind):
+            if self.helper(j, s, words, dp) and s[j:ind] in words:
+                dp[ind] = True
+                break
+
+        return dp[ind]
         pass
 
 

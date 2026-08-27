@@ -28,6 +28,24 @@ Target complexity: O(m * n) time, O(min(m, n)) space if you roll the rows
 
 class Solution:
     def longestCommonSubsequence(self, text1: str, text2: str) -> int:
+        m , n = len(text1) , len(text2)
+
+        dp = [[-1]*(n+1) for _ in range(m+1)]
+
+        return self.helper(0,0,text1,text2,dp)
+
+    def helper(self, i1,i2, t1,t2,dp):
+        if i1 == len(t1) or i2==len(t2):
+            return 0
+        if dp[i1][i2]!=-1:
+            return dp[i1][i2]
+
+        if t1[i1]==t2[i2]:
+            dp[i1][i2] = 1 + self.helper(i1+1,i2+1,t1,t2,dp)
+        else:
+            dp[i1][i2] = max(self.helper(i1+1,i2,t1,t2,dp),self.helper(i1,i2+1,t1,t2,dp))
+
+        return dp[i1][i2]
         pass
 
 

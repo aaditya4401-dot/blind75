@@ -34,7 +34,18 @@ from typing import List
 
 class Solution:
     def lengthOfLIS(self, nums: List[int]) -> int:
-        pass
+
+        n = len(nums)
+        if n==0:
+            return 0
+        dp = [1]*n
+
+        for i in range(n):
+            for j in range(i):
+                if nums[i]>nums[j]:
+                    dp[i] = max(dp[i], 1+dp[j])
+
+        return max(dp)
 
 
 if __name__ == "__main__":
