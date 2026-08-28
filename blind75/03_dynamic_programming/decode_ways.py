@@ -32,6 +32,27 @@ Target complexity: O(n) time, O(1) space
 
 class Solution:
     def numDecodings(self, s: str) -> int:
+        n = len(s)
+        
+        dp = [-1]*(n+1)
+        return self.helper(n,s,dp)
+    def helper(self, ind, s, dp):
+        
+        if ind==0:
+            return 1
+        
+        if dp[ind]!=-1:
+            return dp[ind]
+        
+        ans1 ,ans2 = 0 , 0
+        if s[ind-1]!="0":
+            ans1 = self.helper(ind-1,s,dp)
+        if ind>=2 and 10<= int(s[ind-2:ind])<=26:
+            ans2 = self.helper(ind-2,s,dp)
+        
+        dp[ind] = ans1 + ans2
+
+        return dp[ind]
         pass
 
 

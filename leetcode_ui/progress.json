@@ -1,5 +1,17 @@
 {
   "01_arrays/best_time_to_buy_and_sell_stock": {
     "solved": true
+  },
+  "03_dynamic_programming/decode_ways": {
+    "solved": true
+  },
+  "03_dynamic_programming/house_robber": {
+    "solved": true
+  },
+  "03_dynamic_programming/unique_paths": {
+    "solved": true
+  },
+  "03_dynamic_programming/jump_game": {
+    "solved": true
   }
 }

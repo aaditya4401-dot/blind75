@@ -96,9 +96,9 @@ Tick these off as the tests go green.
 - [x] [Combination Sum IV](03_dynamic_programming/combination_sum_iv.py) — Medium — loop order matters
 - [x] [House Robber](03_dynamic_programming/house_robber.py) — Medium — take/skip
 - [x] [House Robber II](03_dynamic_programming/house_robber_ii.py) — Medium — run it twice
-- [ ] [Decode Ways](03_dynamic_programming/decode_ways.py) — Medium — Fibonacci with gates
-- [ ] [Unique Paths](03_dynamic_programming/unique_paths.py) — Medium — grid DP
-- [ ] [Jump Game](03_dynamic_programming/jump_game.py) — Medium — greedy reach
+- [x] [Decode Ways](03_dynamic_programming/decode_ways.py) — Medium — Fibonacci with gates
+- [x] [Unique Paths](03_dynamic_programming/unique_paths.py) — Medium — grid DP
+- [x] [Jump Game](03_dynamic_programming/jump_game.py) — Medium — greedy reach
 
 ### 04 — Graphs (8)
 

@@ -31,6 +31,18 @@ from typing import List
 
 class Solution:
     def canJump(self, nums: List[int]) -> bool:
+        n = len(nums)
+        furthest = 0
+        for i in range(n):
+            maxSteps = nums[i]
+
+            if i>furthest:
+                return False
+            else:
+                furthest = max(furthest, i+nums[i])
+
+        return True
+
         pass
 
 

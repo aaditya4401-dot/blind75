@@ -29,6 +29,25 @@ Target complexity: O(m * n) time, O(n) space (or O(1) with combinatorics)
 
 class Solution:
     def uniquePaths(self, m: int, n: int) -> int:
+        dp = [[-1]*(n) for _ in range(m)]
+
+        return self.helper(m-1,n-1,m,n,dp)
+
+    def helper(self,i,j, m,n,dp):
+        if i==0 and j==0:
+            return 1
+
+        if dp[i][j]!=-1:
+            return dp[i][j]
+
+        up = self.helper(i-1,j,m,n,dp) if i>0 else 0
+        left = self.helper(i,j-1,m,n,dp) if j>0 else 0
+
+        dp[i][j] = up+left
+
+        return dp[i][j]
+
+
         pass
 
 
