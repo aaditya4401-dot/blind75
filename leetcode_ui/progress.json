@@ -13,5 +13,26 @@
   },
   "03_dynamic_programming/jump_game": {
     "solved": true
+  },
+  "09_strings/encode_and_decode_strings": {
+    "solved": true
+  },
+  "09_strings/group_anagrams": {
+    "solved": true
+  },
+  "05_intervals/insert_interval": {
+    "solved": true
+  },
+  "05_intervals/meeting_rooms": {
+    "solved": true
+  },
+  "05_intervals/meeting_rooms_ii": {
+    "solved": true
+  },
+  "05_intervals/merge_intervals": {
+    "solved": true
+  },
+  "05_intervals/non_overlapping_intervals": {
+    "solved": true
   }
 }

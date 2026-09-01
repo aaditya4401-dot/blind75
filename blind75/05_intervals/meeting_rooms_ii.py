@@ -29,10 +29,19 @@ Target complexity: O(n log n) time, O(n) space
 """
 
 from typing import List
-
+import heapq
 
 class Solution:
     def minMeetingRooms(self, intervals: List[List[int]]) -> int:
+        intervals.sort(key=lambda x:x[0])
+        
+        heap = []
+        
+        for s,e in intervals:
+            if heap and heap[0]<=s:
+                heapq.heappop(heap)
+            heapq.heappush(heap,e)
+        return len(heap)
         pass
 
 

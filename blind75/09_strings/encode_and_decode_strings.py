@@ -37,9 +37,32 @@ from typing import List
 
 class Solution:
     def encode(self, strs: List[str]) -> str:
-        pass
+        s = ""
+        
+        for string in strs:
+            s += str(len(string))
+            s += "/:"
+            s += string
+        return s
 
     def decode(self, s: str) -> List[str]:
+        i = 0
+        arr = []
+        while i<len(s):
+            num = ""
+            while s[i]!='/':
+                num+=s[i]
+                i+=1
+            num = int(num)
+            
+            
+            i+=2
+            arr.append(s[i:i+num])
+            i+=num
+        
+        return arr
+           
+                
         pass
 
 

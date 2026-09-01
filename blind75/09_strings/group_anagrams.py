@@ -27,10 +27,18 @@ Target complexity: O(n * k) time with a count key, O(n * k) space
 """
 
 from typing import List
+from collections import defaultdict,Counter
 
 
 class Solution:
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+        ans = defaultdict(list)
+        for s in strs:
+            key = frozenset(Counter(s).items())
+            ans[key].append(s)
+        
+        return list(ans.values())
+                
         pass
 
 
