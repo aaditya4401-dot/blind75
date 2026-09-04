@@ -32,7 +32,21 @@ from common.structures import GraphNode
 
 class Solution:
     def cloneGraph(self, node: Optional[GraphNode]) -> Optional[GraphNode]:
-        pass
+        if not node:
+            return None
+        cloned = {}
+        def dfs(node):
+            if node in cloned:
+                return cloned[node]
+
+            clone = GraphNode(node.val)
+            cloned[node]= clone
+
+            for neighbor in node.neighbors:
+                clone.neighbors.append(dfs(neighbor))
+            return clone
+
+        return dfs(node)
 
 
 if __name__ == "__main__":
