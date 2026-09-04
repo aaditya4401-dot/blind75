@@ -32,7 +32,17 @@ Target complexity: O(n) time, O(min(n, alphabet)) space
 
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
-        pass
+        l = 0
+        maxi = 0
+        myset = set()
+        for r in range(len(s)):
+            while s[r] in myset:
+                myset.remove(s[l])
+                l+=1
+            myset.add(s[r])
+            maxi = max(maxi,r-l+1)
+        return maxi
+
 
 
 if __name__ == "__main__":

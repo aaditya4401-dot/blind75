@@ -27,9 +27,38 @@ Hint:
 
 Target complexity: O(n + m) time, O(alphabet) space
 """
-
+from collections import Counter
 class Solution:
     def minWindow(self, s: str, t: str) -> str:
+        l= 0
+        mini = float("inf")
+        counter = Counter(t)
+
+        need = len(counter)
+        have = 0
+
+        result = ""
+        window = {}
+        for r in range(len(s)):
+            window[s[r]] = window.get(s[r],0)+1
+
+            if window[s[r]]==counter[s[r]]:
+                have+=1
+
+            while have==need:
+                if r-l+1<mini:
+                    mini = r-l+1
+                    result = s[l:r+1]
+
+                window[s[l]]-=1
+
+                if window[s[l]]<counter.get(s[l],0):
+                    have-=1
+
+                l+=1
+
+        return result
+
         pass
 
 
