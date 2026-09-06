@@ -36,6 +36,45 @@ from typing import List
 
 class Solution:
     def alienOrder(self, words: List[str]) -> str:
+        adj = {}
+        for word in words:
+            for char in word:
+                adj[char] = set()
+        for i in range(len(words)-1):
+            w1,w2 = words[i],words[i+1]
+            minLen = min(len(w1),len(w2))
+            if len(w1)>len(w2) and w1[:minLen]==w2:
+                return ""
+            for j in range(minLen):
+                if w1[j]!=w2[j]:
+                    adj[w1[j]].add(w2[j])
+                    break
+
+        visited = {}
+        for c in adj:
+            visited[c]=0
+
+        result = []
+
+        def dfs(char):
+            visited[char]=1
+            for nb in adj[char]:
+                if visited[nb]==1:
+                    return False
+                if visited[nb]==0 and not dfs(nb):
+                    return False
+            visited[char]=2
+            result.append(char)
+            return True
+
+        for c in adj:
+            if visited[c]==0:
+                if not dfs(c):
+                    return ""
+
+        return "".join(result[::-1])
+
+
         pass
 
 

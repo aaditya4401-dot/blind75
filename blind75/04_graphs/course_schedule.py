@@ -34,10 +34,32 @@ Target complexity: O(V + E) time, O(V + E) space
 
 from typing import List
 
-
+from collections import defaultdict
 class Solution:
     def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
-        pass
+        adj = defaultdict(list)
+        for edge in prerequisites:
+            adj[edge[1]].append(edge[0])
+
+        visited = [0 for char in range(numCourses)]
+        def dfs(node):
+            visited[node]=1
+
+            for nb in adj[node]:
+                if visited[nb]==1:
+                    return False
+                if visited[nb]==0 and not dfs(nb):
+                    return False
+
+            visited[node]=2
+            return True
+
+        for i in range(numCourses):
+            if visited[i]==0:
+                if not dfs(i):
+                    return False
+
+        return True
 
 
 if __name__ == "__main__":
