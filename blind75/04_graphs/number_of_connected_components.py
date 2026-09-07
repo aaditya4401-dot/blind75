@@ -28,10 +28,31 @@ Target complexity: O(V + E) time, O(V + E) space
 """
 
 from typing import List
-
+from collections import defaultdict
 
 class Solution:
     def countComponents(self, n: int, edges: List[List[int]]) -> int:
+        adj = defaultdict(list)
+        for edge in edges:
+            adj[edge[0]].append(edge[1])
+            adj[edge[1]].append(edge[0])
+        visited = [0 for _ in range(n)]
+
+        count = 0
+        def dfs(node):
+            visited[node]=1
+
+            for nb in adj[node]:
+                if visited[nb]==0:
+                    dfs(nb)
+
+            return True
+        for i in range(n):
+            if visited[i]==0:
+                dfs(i)
+                count+=1
+        return count
+
         pass
 
 

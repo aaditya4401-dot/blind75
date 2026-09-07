@@ -28,10 +28,33 @@ Target complexity: O(V + E) time, O(V + E) space
 """
 
 from typing import List
-
+from collections import defaultdict
 
 class Solution:
     def validTree(self, n: int, edges: List[List[int]]) -> bool:
+        adj = defaultdict(list)
+        if len(edges)!=n-1:
+            return False
+        for u,v in edges:
+            adj[u].append(v)
+            adj[v].append(u)
+
+        visited = [False]*n
+
+        def dfs(node):
+            visited[node]=True
+
+            for nb in adj[node]:
+                if not visited[nb]:
+                    dfs(nb)
+
+
+        dfs(0)
+
+        return all(visited)
+
+
+
         pass
 
 
