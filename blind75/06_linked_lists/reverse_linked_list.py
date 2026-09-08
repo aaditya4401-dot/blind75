@@ -24,7 +24,11 @@ Hint:
 Target complexity: O(n) time, O(1) space
 """
 
+import pathlib
+import sys
 from typing import Optional
+
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1]))
 
 from common.structures import ListNode
 
@@ -36,9 +40,6 @@ class Solution:
 
 if __name__ == "__main__":
     # Run this file to check your answer against this problem's tests.
-    import pathlib
-    import sys
-
     import pytest
 
     _f = pathlib.Path(__file__).resolve()

@@ -26,21 +26,31 @@ from LeetCode's level-order list format (None marks a missing child).
 Target complexity: O(n) time, O(h) space
 """
 
+import pathlib
+import sys
 from typing import Optional
+
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1]))
 
 from common.structures import TreeNode
 
 
 class Solution:
     def isSameTree(self, p: Optional[TreeNode], q: Optional[TreeNode]) -> bool:
+        if not p and not q:
+            return True
+        if not p or not q:
+            return False
+        if p.val!= q.val:
+            return False
+
+        return self.isSameTree(p.left,q.left) and self.isSameTree(p.right,q.right)
+
         pass
 
 
 if __name__ == "__main__":
     # Run this file to check your answer against this problem's tests.
-    import pathlib
-    import sys
-
     import pytest
 
     _f = pathlib.Path(__file__).resolve()
