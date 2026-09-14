@@ -36,9 +36,30 @@ sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1]))
 
 from common.structures import TreeNode
 
+
 class Solution:
     def levelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
-        pass
+        if not root:
+            return []
+        q = deque()
+        q.append(root)
+
+        res = []
+        while q:
+            levellen = len(q)
+            short_res = []
+            for _ in range(levellen):
+                node = q.popleft()
+                short_res.append(node.val)
+
+                if node.left:
+                    q.append(node.left)
+                if node.right:
+                    q.append(node.right)
+
+            res.append(short_res)
+
+        return res
 
 
 if __name__ == "__main__":

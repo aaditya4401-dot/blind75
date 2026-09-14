@@ -44,6 +44,7 @@ from common.structures import TreeNode
 
 class Solution:
     def isValidBST(self, root: Optional[TreeNode]) -> bool:
+
         pass
 
 
