@@ -38,7 +38,7 @@ class Solution:
             if char in mapper.values():
                 stack.append(char)
             elif char in mapper:
-                if stack and stack[-1]==char:
+                if stack and stack[-1]==mapper[char]:
                     stack.pop()
                 else:
                     return False
