@@ -37,6 +37,20 @@ from common.structures import ListNode
 
 class Solution:
     def removeNthFromEnd(self, head: Optional[ListNode], n: int) -> Optional[ListNode]:
+        dummy = ListNode(0,head)
+        result = dummy
+
+        for _ in range(n):
+            head = head.next
+
+        while head:
+            head = head.next
+            result = result.next
+
+
+        result.next = result.next.next
+
+        return dummy.next
         pass
 
 
