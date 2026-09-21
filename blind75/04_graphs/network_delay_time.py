@@ -36,9 +36,32 @@ Target complexity: O(E log V) time, O(V + E) space
 
 from typing import List
 
+from collections import defaultdict , deque
+import heapq
 
 class Solution:
     def networkDelayTime(self, times: List[List[int]], n: int, k: int) -> int:
+        adj = defaultdict(list)
+
+        for u,v,t in times:
+            adj[u].append((v,t))
+
+        visited = set()
+
+        heap = [(0,k)]
+
+        while heap:
+            time , node = heapq.heappop(heap)
+            if node in visited:
+                continue
+            visited.add(node)
+            if len(visited)==n:
+                return time
+
+            for nb,t in adj[node]:
+                if nb not in visited:
+                    heapq.heappush(heap,(time+t,nb))
+        return -1
         pass
 
 
