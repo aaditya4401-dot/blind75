@@ -41,11 +41,38 @@ Target complexity: O(k * E) time, O(V) space
 
 from typing import List
 
-
+from collections import defaultdict
+import heapq
 class Solution:
     def findCheapestPrice(
         self, n: int, flights: List[List[int]], src: int, dst: int, k: int
     ) -> int:
+
+        adj = defaultdict(list)
+        for s , d, p in flights:
+            adj[s].append((d,p))
+
+        heap = [(0,src,0)]
+        visited = {}
+        while heap:
+            price , node , flights_taken = heapq.heappop(heap)
+
+            if node==dst:
+                return price
+
+            if flights_taken>=k+1:
+                continue
+
+            if node in visited and visited[node]<=flights_taken:
+                continue
+            visited[node] = flights_taken
+            for nb, p in adj[node]:
+                heapq.heappush(heap , (price + p , nb , flights_taken+1))
+
+
+        return -1
+
+
         pass
 
 
