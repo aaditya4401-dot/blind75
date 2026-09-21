@@ -41,7 +41,19 @@ from common.structures import TreeNode
 
 class Solution:
     def kthSmallest(self, root: Optional[TreeNode], k: int) -> int:
-        pass
+
+        sol = []
+        def inorder(node):
+            if node is None:
+                return
+            inorder(node.left)
+            sol.append(node.val)
+            inorder(node.right)
+
+        inorder(root)
+
+        return sol[k-1]
+
 
 
 if __name__ == "__main__":

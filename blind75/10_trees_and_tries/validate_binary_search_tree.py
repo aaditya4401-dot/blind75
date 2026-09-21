@@ -43,9 +43,26 @@ from common.structures import TreeNode
 
 
 class Solution:
+    def _inorder(self, root , solution):
+        if root is None:
+            return
+        self._inorder(root.left,solution)
+        solution.append(root.val)
+        self._inorder(root.right,solution)
     def isValidBST(self, root: Optional[TreeNode]) -> bool:
+        solution = []
+        self._inorder(root,solution)
+        for i in range(1,len(solution)):
+            if solution[i-1]>=solution[i]:
+                return False
 
-        pass
+        return True
+
+
+
+
+
+
 
 
 if __name__ == "__main__":
