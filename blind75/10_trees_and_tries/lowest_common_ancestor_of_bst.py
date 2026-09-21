@@ -39,7 +39,18 @@ from common.structures import TreeNode
 
 class Solution:
     def lowestCommonAncestor(self, root: TreeNode, p: TreeNode, q: TreeNode) -> TreeNode:
-        pass
+
+        while root:
+            value = root.val
+            if p.val<value and q.val < value:
+                root = root.left
+            elif p.val>value and q.val>value:
+                root = root.right
+            else:
+                return root
+
+
+            pass
 
 
 if __name__ == "__main__":
